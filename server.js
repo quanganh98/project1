@@ -25,9 +25,9 @@ app.use(session1({
 //     else console.log("DB connect success!")
 // })
 
-mongoose.connect("mongodb://balo11044:nblong1997@ds145072.mlab.com:45072/quanlynhahang",(err)=>{
-  if (err) console.error(err)
-  else console.log("DB connect success!")
+mongoose.connect("mongodb://balo11044:nblong1997@ds145072.mlab.com:45072/quanlynhahang", (err) => {
+    if (err) console.error(err)
+    else console.log("DB connect success!")
 })
 
 app.use('/api', apiRouter)
@@ -39,7 +39,7 @@ app.get("/", (req, res) => {
 })
 
 const port = 5050
-app.listen(port, (err) => {
+app.listen(process.env.PORT || port, (err) => {
     if (err) console.log(err)
     else console.log(`Sever running at ${port}`)
 })
